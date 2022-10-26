@@ -9,7 +9,7 @@ out="MP3"
 
 pushd "$1"
 find . -type f -and \( -name '*\.mp3' -or -name '*\.m4a' \) \
-  -exec ../mp3_converter.sh {} "../$out" "$error_log" \;
+  -exec ../mp3_converter.sh {} "../$out" "../$error_log" \;
 popd
 
 if [ -e "$error_log" ]; then
