@@ -20,6 +20,8 @@ function mp3_converter () {
     else
       ffmpeg -n -i "$1" "$outDir/$outFile"
     fi
+  else
+    echo "$1" >> "$3"
   fi
 }
 
