@@ -3,12 +3,12 @@
 
 set -eu
 
-error_log="mp3_converter_R_error_log_$(date +'%y%m%d_%R:%S' ).txt"
+error_log="error_log.mp3_converter_R_$(date +'%y%m%d_%R:%S' ).txt"
 
 out="MP3"
 
 pushd "$1"
-find . -type f -and \( -name '*\.mp3' -or -name '*\.m4a' \) \
+find . -not -name '.*' -type f \( -name '*\.mp3' -or -name '*\.m4a' \) \
   -exec ../mp3_converter.sh {} "../$out" "../$error_log" \;
 popd
 
