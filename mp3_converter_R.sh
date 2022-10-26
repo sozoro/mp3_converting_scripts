@@ -4,6 +4,7 @@
 set -eu
 
 error_log="mp3_converter_R_error_log_$(date +'%x_%R:%S' ).txt"
+echo -n > "$error_log"
 
 out="MP3"
 
