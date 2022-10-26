@@ -16,7 +16,7 @@ function mp3_converter () {
     outDir="$out/$(dirname "$1")"
     mkdir -p "$outDir"
     outFile=$(printf '%03d' "$track"; echo "_$title.mp3" | sed 's/\//_/g')
-    if [ ! -e "$outFile" ]; then
+    if [ ! -e "$outDir/$outFile" ]; then
       if [ "${1##*.}" = "mp3" ]; then
         cp -n "$1" "$outDir/$outFile"
         chmod 644 "$outDir/$outFile"
