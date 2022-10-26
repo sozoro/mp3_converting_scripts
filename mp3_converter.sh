@@ -17,7 +17,7 @@ function mp3_converter () {
     outFile=$(printf '%03d' "${track%%/*}"; echo "$title.mp3" | sed 's/\//_/g')
     if [ "${1##*.}" = "mp3" ]; then
       cp -n "$1" "$outDir/$outFile"
-      chmod -m 644 "$outDir/$outFile"
+      chmod 644 "$outDir/$outFile"
     else
       ffmpeg -n -i "$1" "$outDir/$outFile"
     fi

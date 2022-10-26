@@ -3,8 +3,7 @@
 
 set -eu
 
-error_log="mp3_converter_R_error_log_$(date +'%x_%R:%S' ).txt"
-echo -n > "$error_log"
+error_log="mp3_converter_R_error_log_$(date +'%y%m%d_%R:%S' ).txt"
 
 out="MP3"
 
